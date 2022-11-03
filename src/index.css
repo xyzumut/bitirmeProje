@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: blueviolet;
+}
+
+
+.targetColumn{
+  background-color: aqua;
+}
+.cellHold{
+  border-style: dotted;
+  border-color:white;
+}
+.headerNavLink{
+  padding:4px 12px;
+  font-size: 24px;
+  text-decoration: none;
+  background-color: white;
+  color:#404258;
+  border-radius: 5px;
+  border: 1px solid #404258;
+  transition: .5s ease all;
+}
+.headerNavLink:hover{
+  color:white;
+  background-color: #404258;
+  border-color: white;
+}
+.headerNavLink:active{
+  background-color: #a2a5c4;
+}

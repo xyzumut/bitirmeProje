@@ -10,7 +10,7 @@ const App = () => {
   return (
     <>
 
-      {/* <Header></Header> */}
+      <Header></Header> 
       
       <Routes>
         <Route  path='/' element={<AnaSayfa/>}></Route>

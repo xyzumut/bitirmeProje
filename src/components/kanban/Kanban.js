@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
-import Cell from "./Cell";
-import KanbanColumn from "./KanbanColumn";
+import Cell from "./kanbanComponents/Cell";
+import KanbanColumn from "./kanbanComponents/KanbanColumn";
 const KanbanTable = styled.div`
     height: 400px;
     background-color: wheat;

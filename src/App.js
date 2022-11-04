@@ -9,7 +9,8 @@ import Login from './pages/Login/Login';
 const App = () => {
   return (
     <>
-      <Header></Header>
+
+      {/* <Header></Header> */}
       
       <Routes>
         <Route  path='/' element={<AnaSayfa/>}></Route>

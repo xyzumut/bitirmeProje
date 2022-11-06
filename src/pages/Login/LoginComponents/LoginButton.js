@@ -1,7 +1,7 @@
 import React from "react";
 import styled from 'styled-components'
 
-const _Button = styled.button`
+const ButtonContainer = styled.button`
     padding:6px 60px;
     background-color:${({bgColor}) => bgColor};
     color:${({color}) => color};
@@ -20,15 +20,15 @@ const _Button = styled.button`
     }
 `
 
-const Button = ({onClick,type,children,radius='5px',bgColor='#0d6efd',color='white'}) => {
+const LoginButton = ({onClick,type,children,radius='5px',bgColor='#0d6efd',color='white'}) => {
     return(
-        <_Button 
+        <ButtonContainer
             type={type} 
             onClick={onClick} 
             radius={radius}
             bgColor={bgColor}
             color={color}
-        >{children}</_Button>
+        >{children}</ButtonContainer>
     )
 }
-export default Button
+export default LoginButton

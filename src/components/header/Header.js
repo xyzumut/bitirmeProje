@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components'
 import { NavLink } from "react-router-dom";
+import { useTheme } from "../../context/ThemeContext";
 
 const HeaderContainer = styled.header`
     width: 100%;
@@ -12,11 +13,12 @@ const HeaderContainer = styled.header`
     align-items:center;
 `
 const Header = () => {
-
+    const {theme,setTheme} = useTheme()
     return(
         <HeaderContainer>
             <NavLink className={'headerNavLink'} to={'/kanban'}>Kanban Panosu</NavLink>
             <NavLink className={'headerNavLink'} to={'/login'}>Login Ekranı</NavLink>
+            <button onClick={()=> {setTheme(!theme)}}>Temayı değiştir </button>
         </HeaderContainer>
     )
 }

@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
-import {Input, Button} from './LoginComponents/allLoginComponents'
+import {Input, LoginButton} from './LoginComponents/allLoginComponents'
 import {FaUser} from 'react-icons/fa'
 import {highFive, kanbanPicture} from '../../img/allİmages'
 import {KanbanPicture, Label, LabelText, LoginContainer, LoginForm, 
@@ -58,7 +58,7 @@ const Login = () => {
                                 <LabelText>Şifre</LabelText>
                                 <Input type={'password'} icon={'yes'} />
                             </Label>
-                            <Button>Giriş Yap</Button>
+                            <LoginButton>Giriş Yap</LoginButton>
                         </LoginFormItems>
                         <KanbanPicture src={kanbanPicture} />
                     </LoginForm>

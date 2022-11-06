@@ -1,31 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from 'styled-components'
-import Cell from "./kanbanComponents/Cell";
+import Ticket from "./kanbanComponents/Ticket";
 import KanbanColumn from "./kanbanComponents/KanbanColumn";
-const KanbanTable = styled.div`
-    height: 400px;
-    background-color: wheat;
+
+const KanbanTableContainer = styled.div`
+    height: 500px;
     display: flex;
     flex-direction: row;
     width:max-content;
 `
-const Kanban = ({columnData}) => {
+const KanbanTable = ({columnData}) => {
     return(
-        <KanbanTable style={{margin:'100px auto'}}>
+        <KanbanTableContainer style={{margin:'100px auto'}}>
             {
                 columnData.map((item,key)=>{
                     return(
                         <KanbanColumn key={key} columnName={item.columnName} >
                             {
-                                item.cellTags && item.cellTags.map((cellTag,key)=>{
-                                    return(<Cell key={key} tags={cellTag} />)
+                                item.ticketGroups && item.ticketGroups.map((ticket,key)=>{
+                                    return(
+                                        <Ticket  key={key} tags={ticket}/>
+                                    )
                                 })
                             }
                         </KanbanColumn>
                     )
                 })
             }
-        </KanbanTable>
+        </KanbanTableContainer>
     )
     // return(
     //     <KanbanTable>
@@ -43,4 +45,4 @@ const Kanban = ({columnData}) => {
     //     </KanbanTable>
     // )
 }
-export default Kanban
+export default KanbanTable

@@ -1,47 +1,47 @@
 import React, { useState } from "react";
-import Kanban from "../../components/kanban/Kanban";
-
+import styled from "styled-components";
+import KanbanTable from "../../components/kanban/KanbanTable";
+import { useTheme } from "../../context/ThemeContext";
 const initialColumnData = [
     {
         columnName:'ColumnName1',
-        cellTags:[['bugfix','feature'],['feature']]
+        ticketGroups:[['bugfix','feature'],['feature']]
     },
     {
         columnName:'ColumnName2',
-        cellTags:[['bugfix','feature']]
+        ticketGroups:[['bugfix','feature']]
     },
     {
         columnName:'ColumnName3',
-        cellTags:[['bugfix'],['update','feature','bugfix']]
+        ticketGroups:[['bugfix'],['update','feature','bugfix']]
     },
     {
         columnName:'ColumnName4',
+        ticketGroups:[['feauture']]
     }
 ]
 
+
 const KanbanPanosu = () => {
     const [columnData,setColumnData]=useState(initialColumnData)
-
-    return(
-        <>
-            <Kanban columnData={columnData}></Kanban>
-        </>
-    )
+    const themeItems = useTheme()
+    console.log(themeItems)
+    return<KanbanTable columnData={columnData}></KanbanTable>
 }
 export default KanbanPanosu
 /* ColumnData Formatı
 const initialColumnData = [
     {
         columnName:'ColumnName1',
-        tagGroups:[['bugfix','feature'],['feature']]
+        ticketGroups:[['bugfix','feature'],['feature']]
     },
     {
         columnName:'ColumnName2',
-        tagGroups:[['bugfix','feature']]
+        ticketGroups:[['bugfix','feature']]
     },
     {
         columnName:'ColumnName3',
-        tagGroups:[['bugfix'],['update','feature']]
+        ticketGroups:[['bugfix'],['update','feature']]
     }
 ]
 */

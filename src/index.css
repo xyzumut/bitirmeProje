@@ -12,20 +12,15 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: black;
+  background: #525893;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: blueviolet;
+  background: #7b86e6;
 }
 
+.targetColumn{/* Bu sınıf boş sınıftır, sürükle bırakta hedef göstermek için var olan bir sınıf */}
+.ticketHold{/* Bu sınıfta boş sınıf, tutulan ticket'ı belirtmek için kullanılıyor. */}
 
-.targetColumn{
-  background-color: aqua;
-}
-.cellHold{
-  border-style: dotted;
-  border-color:white;
-}
 .headerNavLink{
   padding:4px 12px;
   font-size: 24px;

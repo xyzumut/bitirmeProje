@@ -11,6 +11,9 @@ const HeaderContainer = styled.header`
     flex-direction:row;
     justify-content:space-around;
     align-items:center;
+    position:absolute;
+    opacity:.3;
+    top:0;
 `
 const Header = () => {
     const {theme,setTheme} = useTheme()

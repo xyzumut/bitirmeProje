@@ -1,65 +1,58 @@
 import styled from "styled-components"
 const LoginLayout = styled.div`
-    width:100%;
+    width:100vw;
     height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    background-color:#C7EAB4;
-    background-color:#001253;
-    background-color:#06283D;
-`
-const LoginContainer = styled.div`
-    width:1300px;
-    height:600px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-`
-const LoginFormPanel = styled.div`
-    width:40%;
-    height:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    opacity:.9;
-    transition:.5s all ease;
-    &:hover{
-        opacity:1;
-    }
+    // background-color:#d4f0f4;
+    background-color:inherit;
 `
 const LoginForm = styled.div`
-    width:80%;
-    height:90%;
-    background-color:white;
+    margin-top:100px;
+    width:450px;
+    height:550px;
     border-radius:30px;
     position:relative;
     padding-top:100px;
     display:flex;
     flex-direction:column;
     align-items:center;
+    background-color:rgba(255, 255, 255 ,.4);
+    // border:3px solid #0D6EFD;
 `
 const LoginFormItems = styled.div`
     width:100%;
-    height:60%;
+    height:70%;
     display:flex;
     flex-direction:column;
     justify-content:space-around;
     align-items:center;
 `
-const Label = styled.label``
+const LoginInputs = styled.div`
+    width:100%;
+    height:200px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+`
+const Label = styled.label`
+    margin-bottom:5px;
+`
 const LabelText = styled.p`
     font-size:20px;
     margin:5px 0;
     color :#0D6EFD;
 `
 const KanbanPicture = styled.img`
-    height:200px;
+    height:40%;
 `
 const LoginFormLogo = styled.div`
     width:150px;
     height:150px;
-    background-color:#0D6EFD;
+    background-color:rgba(255,255,255);
+    border:3px solid #0D6EFD;
     position:absolute;
     top:-75px;
     left:50%;
@@ -71,61 +64,53 @@ const LoginFormLogo = styled.div`
     *{
         width:70%;
         height:70%;
-        color:white;
+        color:#0D6EFD;
     }
 `
-const TextContainer = styled.div`
-    width:60%;
-    height:100%;
-    background-color:white;
-    display:flex;
-    flex-direction:column;
-    padding:100px 40px;
-    border-radius:20px;
-    opacity:.9;
-    transition:.5s all ease;
-    &:hover{
-        opacity:1;
-    }
-`
-const TextTyping1 = styled.p`
-    font-size:48px;
-    background: linear-gradient(to top right,#0d6efd, green, #0d6efd, yellow);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
+const LoginText = styled.div`
     width:100%;
-    height:20%;
-    line-height:100px;
-    margin-bottom:20px;
+    height:10%;
 `
-const TextTyping2 = styled.p`
-    font-size:24px;
-    background: linear-gradient(to top right,#0d6efd, green, #0d6efd, green, #0d6efd);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height:40px;
-    height:100px;
-    display:block;
-    width:80%;
+const WelcomeText = styled.div`
+    width:100%;
+    height:100%;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#0d6efd;
+    font-size:20px;
+    &:before{
+        position:absolute;
+        content:'';
+        top:50%;
+        transform:translateY(-50%);
+        left:10px;
+        background-color:#0d6efd;
+        width:30%;
+        height:2px;
+    }
+    &:after{
+        position:absolute;
+        content:'';
+        top:50%;
+        transform:translateY(-50%);
+        right:10px;
+        background-color:#0d6efd;
+        width:30%;
+        height:2px;
+    }
 `
-const LoginImage = styled.img`
-    width:50%;
-    margin:20px auto;
-`
-
-
 export{
     KanbanPicture,
     Label,
+    LoginLayout,
     LabelText,
-    LoginContainer,
     LoginForm,
     LoginFormItems,
     LoginFormLogo,
-    LoginFormPanel,
-    LoginImage,
-    LoginLayout,
-    TextContainer,
-    TextTyping1,
-    TextTyping2,
+    LoginInputs ,
+    LoginText,
+    WelcomeText
 }

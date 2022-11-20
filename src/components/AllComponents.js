@@ -1,12 +1,6 @@
-import Button from '../pages/Login/LoginComponents/Button'
-import Input from './formItems/Input'
-import Header from './header/Header'
-import Kanban from './kanban/Kanban'
-
-
+import KanbanTable from './Kanban/KanbanTable'
+import Header from './Header/Header'
 export{
-    Button,
-    Input,
     Header,
-    Kanban
+    KanbanTable,
 }

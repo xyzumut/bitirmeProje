@@ -18,8 +18,11 @@
   background: #7b86e6;
 }
 
-.targetColumn{/* Bu sınıf boş sınıftır, sürükle bırakta hedef göstermek için var olan bir sınıf */}
-.ticketHold{/* Bu sınıfta boş sınıf, tutulan ticket'ı belirtmek için kullanılıyor. */}
+.targetColumn{
+}
+.ticketHold{
+  background-color: white !important;
+}
 
 .headerNavLink{
   padding:4px 12px;
@@ -38,4 +41,8 @@
 }
 .headerNavLink:active{
   background-color: #a2a5c4;
+}
+
+body{
+  background: linear-gradient(to top right,#8ef8f3 ,#FBC1CC 70%) fixed;
 }

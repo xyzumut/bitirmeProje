@@ -2,7 +2,7 @@ import React from "react";
 import styled from 'styled-components'
 
 const ButtonContainer = styled.button`
-    padding:6px 60px;
+    padding:6px 120px;
     background-color:${({bgColor}) => bgColor};
     color:${({color}) => color};
     border:1px solid ${({color}) => color};
@@ -11,6 +11,7 @@ const ButtonContainer = styled.button`
     transition:.5s all ease;
     font-size:18px;
     border-radius:${({radius}) => radius};
+    margin-top:10px;
     &:hover{
         background-color:${({color}) => color};
         color:${({bgColor})=>bgColor};

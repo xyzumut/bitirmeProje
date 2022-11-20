@@ -1,9 +1,26 @@
 import React,{useEffect, useRef} from "react";
 import styled from 'styled-components'
-import { useTheme } from "../../../context/ThemeContext";
+import { useTheme } from "../../../../context/ThemeContext";
+const getcolumnWidth = (columnLength) => {
+    console.log('columnLength',columnLength)
+    let width = 0 
+    let fontSize = 0
+    switch (columnLength) {
+        case 3:
+            width = 33
+            break;
+        case 4:
+            width = 25
+            break;
+        default:
+            width = 20
+            break;
+    }
+    return width+'%'
+}
 const Column = styled.div`
-    border: 1px solid ${({themeItems}) => themeItems.theme === true ? themeItems.dark : themeItems.light};
-    width:200px;
+    width:${({columnLength}) => columnLength && getcolumnWidth(columnLength)};
+    height:600px;
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
@@ -11,32 +28,38 @@ const Column = styled.div`
     padding:0px 5px;
     align-content: flex-start;
     z-index:100;
-    background-color:${({themeItems}) => themeItems.theme === true ? themeItems.gray : themeItems.dark1};
-    color:${({themeItems}) => themeItems.theme === true ? themeItems.dark1 : themeItems.light  };
     position:relative;
-    `
+    margin:0 20px;
+    border:none;
+    background:rgba(255,255,255,.2);
+    border-radius:5px;
+`
 const ColumnName = styled.div`
     width:100%;
     height:24px;
-    background-color:inherit;
-    font-size:14px;
+    font-size:18px;
     font-weight:600;
-    text-align:center;
     line-height:24px;
-    position:sticky;
+    font-weight:900;
     top:0;
-    &:after{
+    text-align:center;
+    position:relative;
+    &:before, &:after{
         content:'';
-        width:100%;
-        height:2px;
-        poisiton:absolute;
         display:block;
-        top:0;
-        bottom:0;
-        background-color:${({themeItems}) => themeItems.theme === true ? themeItems.dark1 : themeItems.light};
+        position:absolute;
+        width:15%;
+        height:2px;
+        background-color:black;
+        top:50%;
+        transform:translateY(-50%);
     }
+    &:after{
+        right:0;
+    }
+    
 `
-const KanbanColumn = ({children,columnName}) => {
+const KanbanColumn = ({children, columnName, columnLength}) => {
     const themeItems = useTheme()
     const columnRef = useRef()
     useEffect(()=>{
@@ -61,7 +84,7 @@ const KanbanColumn = ({children,columnName}) => {
     },[])
 
     return(
-        <Column  themeItems={themeItems}ref={columnRef}> 
+        <Column  themeItems={themeItems} ref={columnRef} columnLength={columnLength}> 
             <ColumnName themeItems={themeItems}>{columnName}</ColumnName>
             {children}
         </Column>
